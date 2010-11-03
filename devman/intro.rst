@@ -34,4 +34,10 @@ architecture will use this list and the corresponding methods to internally link
 to the provided plugin functionality. Plugins may consist of multiple modules, 
 but only modules with the ``__all__`` variable defined will be examined for plugin 
 functionality. The specifics of what each registration method must provide are 
-discussed in the appropriate section of the manual. 
+discussed in the appropriate section of the manual. Finally, analysis, graph, and 
+transform plugins must provide string identifiers such that authors of other 
+plugins can easily incorporate the functionality of other plugins within their own 
+code. For example, a useful analysis plugin may provide functionality that the 
+author of a graphing plugin has an interesting way of displaying through a plot. 
+The specifics of how to call these plugins can be found within the appropriate 
+subsection of this manual.

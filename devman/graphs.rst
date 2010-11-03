@@ -240,20 +240,42 @@ class represents the entire drawing area in the UI, and is necessary for
 some applications such as providing scale bars and legends on plots (see 
 the Heatmap2D plugin for an example).
 
-Finally, the graphing method is not expected to return anything since the 
+As mentioned above, you may want to include data transformation options 
+in your plugin. Currently the built-in options panel is not linked to the 
+Transform methods module, and only allows for ``linear`` and ``log`` options. 
+However, if you want to perform a log transformation before plotting 
+(instead of asking matplotlib to do it as part of the plot), you can 
+access the Transforms module with the following import::
+
+   import transforms.methods as tm
+   
+This module provides a ``getMethod(strID)`` method that returns the method 
+specified by the string identifier of the transformation method/plugin. 
+So to apply a log transform to your data with the built-in log method 
+you might use the following line::
+
+   logData = tm.getMethod('log')(data)
+
+The graphing method is not expected to return anything since the 
 entire aim is to issue drawing commands to the underlying matplotlib engine.
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+Returning to the method declaration, the first line of the doc string must 
+be semicolon-separated into three fields as seen above. The 'string-ID' 
+field is what other plugin authors will give to the internal plot module in 
+order to access the graphing method from within their own code. For example, 
+an analysis plugin may want to display results in a temporary window that
+provides a simple Figure canvas. The 'method-name' is a short name that FIND 
+will use for the menu item placed in Plugins...Graph as well as the context 
+plot menu that appears when clicking on a data item in the project tree. The 
+final field will appear in the program status bar when a user moves the 
+mouse over the menu item for the graphing plugin.
+
+
+
+
+
+
+
+
+
+
