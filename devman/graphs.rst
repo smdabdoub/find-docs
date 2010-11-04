@@ -204,11 +204,12 @@ user interface. The expected method signature and doc string are as follows::
       method-string-ID; method-name; Method description string
       """
 
-The two parameters above are always passed to the graphing method, but 
-do not necessarily need to be each used. The ``subplot`` parameter is 
-a ``Subplot`` class instance. This class is the basic unit that represents 
-a single graph/plot in the plot Panel in the UI. It contains the following 
-attributes (lower case) and properties (camel case) of use to plugin authors::
+The two parameters above are always passed to the graphing method, but do not 
+necessarily need to be each used. The ``dims`` parameter is simply a list 
+containing the currently selected data dimensions. The ``subplot`` parameter is 
+a ``Subplot`` class instance. This class is the basic unit that represents a 
+single graph/plot in the plot Panel in the UI. It contains the following
+attributes (lower case) and properties (capitalized) of use to plugin authors::
 
    Subplot:
       Data
@@ -226,12 +227,12 @@ with the graphing method.
 
    .. important:: Since the options dialog is only available to the user once 
       the plot has been drawn, the ``opts`` attribute is empty the first 
-      time the graphing method is called. So each graphing plugin must 
+      time the graphing method is called. Thus, each graphing plugin must 
       check whether the ``opts`` dict is empty and fill it with default
-      options if so.
+      options.
 
 The ``axes`` attribute is an instance of the matplotlib 
-`Axes <http://matplotlib.sourceforge.net/api/axes_api.html>`_` class. This 
+`Axes <http://matplotlib.sourceforge.net/api/axes_api.html>`_ class. This 
 class is the target for drawing, and all matplotlib provided plotting 
 methods are available through it. The final ``parent`` attribute is an 
 instance of the matplotlib 
@@ -265,7 +266,7 @@ field is what other plugin authors will give to the internal plot module in
 order to access the graphing method from within their own code. For example, 
 an analysis plugin may want to display results in a temporary window that
 provides a simple Figure canvas. The 'method-name' is a short name that FIND 
-will use for the menu item placed in Plugins...Graph as well as the context 
+will use for the menu item placed in Plugins>>Graph as well as the context 
 plot menu that appears when clicking on a data item in the project tree. The 
 final field will appear in the program status bar when a user moves the 
 mouse over the menu item for the graphing plugin.

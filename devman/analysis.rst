@@ -6,21 +6,21 @@ plugins can fill two roles: Provide some visual analysis results when
 a user clicks on the analysis plugin from within the plugins menu, or 
 return numeric analysis results to a piece of code calling it from 
 within FIND. Analysis plugins must at least provide numeric results 
-to callers, but the plugin can also indicate it has the ability to display 
-some results to the user through a dialog or other window object. This 
-is possible through the method registration function which looks like 
-the following::
+to callers, but the plugin can also indicate that it has the ability 
+to display some results to the user through a dialog or other window 
+object. This is possible through the method registration function which 
+should be similar to the following::
 
    def analysisMethod_register():
       return (analysisMethod, True)
       
 Here, the first item in the tuple is a reference to the provided 
-analysis method, while the second item is a boolean indicating (with 
-the True) that this method is callable by the user and will display 
-some results visually. A True in this slot will cause FIND to create 
-an enabled menu item in the Plugins...Analysis menu. A False will 
-cause FIND to place a disabled menu item to simply inform the user 
-the plugin was loaded.
+analysis method, while the second item is a boolean indicating 
+(True in this case) that this method is callable by the user and 
+will display some results visually. A True in this slot will cause 
+FIND to create an enabled menu item in the Plugins>>Analysis menu. 
+A False will cause FIND to place a disabled menu item to simply inform 
+the user the plugin was loaded.
 
 The analysis method signature and doc string are as follows::
 
@@ -45,7 +45,7 @@ The first line of the doc string must be semicolon-separated into three
 fields as seen above. The 'string-ID' field is what other plugin authors 
 will give to the analysis module in order to access the analysis method 
 from within their own code. The 'method-name' is a short name that FIND will 
-use for the menu item placed in Plugins...Analysis. The final field will 
+use for the menu item placed in Plugins>>Analysis. The final field will 
 appear in the program status bar when a user moves the mouse over the 
 menu item for the analysis plugin.
 
