@@ -3,8 +3,8 @@ Data
 Currently, the main source FIND accepts for data are 
 `FCS 3.0 <http://www.isac-net.org/index.php?option=com_content&task=view&id=101&Itemid=150>`_
 formatted data files. These files contain a great deal of useful information 
-that FIND can make use of to provide a better user experience. However, FIND can also open 
-CSV (comma separated value) files in the following format::
+that FIND can make use of to provide a better user experience. However, FIND can 
+also open CSV (comma separated value) files in the following format::
 
 	"FSC-A","SSC-A","PI (live-dead)-A","GFP-A"
 	389.850006103516,2.46000003814697,-14.7600002288818,1739.21997070312
@@ -18,12 +18,83 @@ Additional file formats may be used as a source if a
 
 Opening files
 --------------
-Flow Cytometry data files are opened through the File >> Open... menu item in the FIND interface. 
-As mentioned in the previous section, the main data source are FCS 3.0 files, and those are enabled 
-for selection by default.
+Flow Cytometry (FC) data files are opened through the File >> Open... menu item in 
+the FIND interface. As mentioned in the previous section, the main data source 
+are FCS 3.0 files, and those are enabled for selection by default. The 
+screenshots below illustrate the process of opening single or multiple files. 
 
-.. image:: figures/open_dialog.png
-    :width: 500px
-    :alt: Open File dialog with FCS 3.0 selected by default
+.. figure:: figures/data_fig1_openfile.png
+   :scale: 50 %
 
-more text
+Open File dialog with FCS 3.0 selected by default
+
+.. figure:: figures/data_fig2_rename.png
+   :scale: 50 %
+       
+After choosing your file(s) the Sample Data Display window appears with all the 
+channels and the first ten rows of data visible. The data grid allows you to 
+rearrange columns by clicking on the column header and dragging to the desired 
+position. Double clicking on the column header allows you to rename the channel, 
+as illustrated above. If you are opening multiple files with the same column 
+order, check the 'Apply to all files' option. This will apply the column order 
+and names to all following files.
+
+.. note:: When opening multiple files, FIND assumes each experiment represented 
+          by the files was done with the same channels, and will use the channel 
+          names from the first opened file to populate the Dimension Selection 
+          dropdowns.  
+    
+.. figure:: figures/data_fig3_seldims.png
+   :scale: 50 %
+       
+The second dialog displayed when opening FC data files allows you to specify 
+which channels are used when applying automated analysis tools such as 
+clustering algorithms. For example, in many cases the automatically recorded 
+Time channel does not provide useful information for classifying cells. In the 
+screenshot above, it has been deselected. Again, by selecting 'Apply to all 
+files' the selections made here will automatically be applied to the rest of 
+the files being opened.
+
+The two screenshots below illustrate the result of opening, respectively, one 
+and multiple files. FIND automatically plots a 2D scatterplot of the first two 
+channels for each opened file. For multiple files, the plots are arranged in 
+an ``n x 2`` (rows, columns) format where ``n`` is the number of opened files.
+
+.. figure:: figures/data_fig4_fileopened.png
+   :scale: 50 %
+   
+.. figure:: figures/data_fig5_2filesopened.png
+   :scale: 50 %
+   
+ 
+Exporting Data
+--------------
+Through the File>>Export... submenu you can save the currently selected data 
+item to file. The specific export type is selected directly as an option in the 
+submenu. FIND currently has the ability to export to CSV, but any IO plugin 
+may implement an export file type.
+
+.. figure:: figures/data_fig6_exporting.png
+   :scale: 50 % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
