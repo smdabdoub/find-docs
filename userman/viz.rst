@@ -27,14 +27,14 @@ are grouped into those applicable to datasets and those applicable to
 clusterings.
 
 .. note:: Plot types applicable to both data items show up in the context menus 
-          for both (e.g. 2D Scatter Plot).
+          for both (e.g. 2D Scatter Plot). 
 
 Altering Plots
 --------------
 The main method of interacting with and changing the view of a plot is through 
-the Dimension Selection panel beneath the plotting area. This panel contains 
+the Channel Selection panel beneath the plotting area. This panel contains 
 two dropdown boxes labeled ``X axis`` and ``Y axis`` (when 3D plots are added 
-a third for the Z axis will be added). Changing the selected dimension 
+a third for the Z axis will be added). Changing the selected channel (dimension) 
 automatically updates all the plots in the plotting area, with some exceptions. 
 Specifically, those plot types that display all dimensions at once, or are 
 otherwise not designed to change will not be updated. Additionally, individual 
@@ -59,6 +59,30 @@ you to alter the display or calculation with options specific to the plot type
 or general. Examples of each and more information are discussed in the 
 following sections.
 
+General Plot Properties
+^^^^^^^^^^^^^^^^^^^^^^^
+FIND provides two sets of general plot options that appear where appropriate 
+(and available to plugin authors). First, below, is the Plot Range options 
+panel. Here you can modify the graph window within which the data is displayed. 
+By default, FIND plots on both axes, a range from 0 to the maximum value of the 
+data plus five percent, i.e. ``(0, max(data) * 1.05]``. This is indicated by the 
+selection of the **Auto** checkboxes.
+
+.. figure:: figures/viz_fig5_genprop_range.png
+   :scale: 30 %
+
+The second set of general options is the Transformations panel. This setting is 
+initially set automatically by inspection of the data. FCS format files list 
+the amplification type (linear or logarithmic) used to capture each channel 
+of data, and FIND uses this information to decide whether the data should be 
+displayed in a linear or log\ :sub:`10` \ scale. In this options panel, you can tell 
+FIND to either use automatically discovered information, or choose what scale 
+the data are displayed in for each axis independently.
+
+.. figure:: figures/viz_fig6_genprop_tfrm.png
+   :scale: 30 %
+
+
 Dataset Plots
 -------------
 FIND currently provides four plot types for visualizing datasets: 2D Scatter 
@@ -68,35 +92,120 @@ in the following sections.
 2D Scatter Plot
 ^^^^^^^^^^^^^^^
 The 2D Scatter Plot draws a single point in two dimensional space for each 
-event (cell) in the dataset.  
+event (cell) in the dataset. Below is an example plot of the Forward Scatter 
+(x-axis) and Side Scatter (y-axis) on a log\ :sub:`10` \ scale. As seen in the 
+General Plot Properties section above, there are no options particular to the 
+2D Scatter Plot.
 
 .. figure:: figures/data_fig4_fileopened.png
    :scale: 30 %
 
 Boxplot
 ^^^^^^^
+The Boxplot visualization is an example of a plot that is insensitive to 
+user changes to the displayed channel, as it displays data for all channels 
+at once. The x-axis here displays one tick-mark for each channel in the data, 
+and for each channel a traditional 
+`box plot <http://en.wikipedia.org/wiki/Box_plot>`_ in the y-axis.
 
-.. figure:: figures/viz_fig5_boxplot.png
+.. figure:: figures/viz_fig7_boxplot.png
+   :scale: 30 %
+   
+The only alterable properties for this plot (as seen below) is the angle to 
+which the x-axis labels are rotated, with ``0`` representing a horizontal 
+orientation. This is useful for datasets with many channels where FIND does not 
+adequately choose an angle that cleanly separates the labels.
+
+.. figure:: figures/viz_fig8_boxplot_props.png
    :scale: 30 %
 
 Histogram
 ^^^^^^^^^
+The Histogram plot displays a single channel (x-axis) and, by default fits a 
+Gaussian kernel to the data as an approximation to get the smooth curve seen 
+in the image below. 
 
-.. figure:: figures/viz_fig6_histogram.png
+.. figure:: figures/viz_fig9_histogram.png
+   :scale: 30 %
+
+The Gaussian kernel estimation gives a good representation of the overall 
+shape of the data, but may not adequately estimate the amplitude. In the 
+options for this plot, you can additionally select to display the histogram as 
+a traditional binned plot separately, or overlay the estimation with the binned 
+version via the **Histogram Type** option. Finally, you can set the fineness of 
+the plot by changing the **Histogram Bins** option.  
+   
+.. figure:: figures/viz_fig10_histogram_props.png
    :scale: 30 %
 
 2D Heatmap
 ^^^^^^^^^^
+The heatmap plot is essentially a 2D histogram. It divides the plot into a set 
+of hexagonal bins, only displaying a bin if it contains at least one data 
+point. The density of points contained within the bin is displayed as a color 
+map (heat map) with a scale bar on the right side of the plot.
 
-.. figure:: figures/viz_fig7_heat.png
+.. figure:: figures/viz_fig11_heat.png
    :scale: 30 %
    
+There are three (currently two) modifiable options for the 2D Heatmap. The 
+**Heatmap Type** is currently under development and other options will 
+eventually be available. The **Color Map** option sets the range of colors that 
+are mapped to bin density from low to high. The default gist_earth (seen in the 
+above image) is generally good, but other color maps may provide better 
+visualization for sparse or especially dense datasets. The **Bins** option 
+specifies the fineness of the 2D subdivision of the data points. Larger 
+values may provide better insight into the data, but will take longer to 
+plot.
+
+.. figure:: figures/viz_fig12_heat_props.png
+   :scale: 30 %
    
-   
-   
-   
-   
-   
+Clustering Plots
+----------------
+FIND currently provides two plot types for visualizing clustering results: 2D 
+Scatter Plot and Barplot.
+
+2D Scatter Plot
+^^^^^^^^^^^^^^^
+The only difference between the the 2D Scatter Plot as applied to a clustering 
+as opposed to a dataset, is color. Each data point is colored according to 
+cluster membership as seen in the image below. There are no plot-specific 
+options.
+
+.. figure:: figures/viz_fig14_2dscatter_clust.png
+   :scale: 30 %
+
+Barplot
+^^^^^^^
+This plot displays cluster membership counts in a vertical bar along the 
+y-axis. Each cluster is a tick on the x-axis. The default y-axis value is the 
+percentage of each cluster out of the total events in the parent dataset.
+
+.. figure:: figures/viz_fig15_barplot.png
+   :scale: 30 %
+
+
+.. figure:: figures/viz_fig16_barplot_props.png
+   :scale: 30 %
+
+
+
+Figures
+-------
+A Figure collects everything within and related to the plotting area. 
+Specifically, all plots (and their settings) within the plotting area, 
+the layout of the plots, the selected channels, and the linked/unlinked status 
+of each plot.
+
+Plotting Area Setup
+^^^^^^^^^^^^^^^^^^^
+The plotting area is organized into a rectangular grid. Initially, the grid 
+layout and the number of plots is determined by the number of opened files, as 
+discussed earlier. If you want to change the number of plots or the number of 
+rows and columns, you must use the **Plots>>Setup** menu option.
+
+ 
    
    
    
