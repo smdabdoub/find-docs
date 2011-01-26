@@ -56,9 +56,10 @@ files' the selections made here will automatically be applied to the rest of
 the files being opened.
 
 The two screenshots below illustrate the result of opening, respectively, one 
-and multiple files. FIND automatically plots a 2D scatterplot of the first two 
+and multiple files. FIND automatically plots a 2D scatter plot of the first two 
 channels for each opened file. For multiple files, the plots are arranged in 
-an ``n x 2`` (rows, columns) format where ``n`` is the number of opened files.
+an ``n x 2`` (rows, columns) format where ``n`` is half the number of 
+opened files.
 
 .. figure:: figures/data_fig4_fileopened.png
    :scale: 50 %
