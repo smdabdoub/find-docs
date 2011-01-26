@@ -7,7 +7,6 @@ FIND documentation
 FIND (\ **F**\ low \ **I**\ nvestigation using \ **N**\ -\ **D**\ imensions) is a software package 
 designed to facilitate the visualization and analysis of 
 `Flow Cytometry <http://wikipedia.org/wiki/Flow_cytometry>`_ data for the scientific target audience, 
-as well as providing a target platform for developers to implement their FC-specific algorithms. 
 
 Contents:
 
