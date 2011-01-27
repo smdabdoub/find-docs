@@ -185,10 +185,24 @@ percentage of each cluster out of the total events in the parent dataset.
 .. figure:: figures/viz_fig15_barplot.png
    :scale: 30 %
 
+The Barplot comes with two plot-specific options. The first option allows you 
+to change the rotation angle of the x-axis labels (similar to the Barplot). The 
+**View** option changes the meaning of the y-axis values: the default 
+percentage (as mentioned above), the percentage of the top level parent, and 
+the total number of events in each cluster (no percentage).
 
 .. figure:: figures/viz_fig16_barplot_props.png
    :scale: 30 %
 
+.. note:: As will be explained in the section of the documentation on 
+          clustering, new dataset items can be created by isolating multiple or 
+          individual clusters. These new datasets appear as children of the 
+          original **parent** dataset. As these are dataset items just like 
+          those created by opening files, they can be clustered as well. So 
+          choosing the **top level parent** option for the **View** will 
+          calculate the percentage by making the denominator the number of 
+          events in the original parent dataset instead of the dataset the 
+          clustering was created from. 
 
 
 Figures
@@ -205,10 +219,10 @@ layout and the number of plots is determined by the number of opened files, as
 discussed earlier. If you want to change the number of plots or the number of 
 rows and columns, you must use the **Plots>>Setup** menu option.
 
- 
+.. figure:: figures/viz_fig17_plot_setup.png
+   :scale: 30 % 
    
-   
-   
+
    
    
    
