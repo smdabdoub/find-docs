@@ -13,8 +13,13 @@ be automatically divided into ``n x 2`` (rows x columns), where ``n`` is half
 the number of opened files. The plots contained within the plotting area are 
 collectively referred to as a Figure, which will be explained in detail later.
 
-Plots are created by accessing the Plot context menu available by 
-right-clicking (or ctrl-click on OS X)
+Plotting Data
+--------------
+First select the plot (also called subplot) you want by clicking on it. Your 
+choice is reflected in the far right section of the status bar (see images 
+below). A new plot can be created in the selected plot space by accessing 
+the **Plot** context menu available by right-clicking (or ctrl-click on OS X 
+for single-button mice).
 
 .. figure:: figures/viz_fig2_data_plots.png
    :scale: 30 %
@@ -28,6 +33,15 @@ clusterings.
 
 .. note:: Plot types applicable to both data items show up in the context menus 
           for both (e.g. 2D Scatter Plot). 
+
+Adding and Deleting Plots
+---------------------------
+A new plot space can be added by selecting the **Plots>>Add Subplot** menu 
+item. The new space is automatically selected as the current and so is ready 
+to be drawn to.
+
+A plot (and its space) can be deleted through the context menu (right-click) 
+for that specific plot.
 
 Altering Plots
 --------------
@@ -208,9 +222,18 @@ the total number of events in each cluster (no percentage).
 Figures
 -------
 A Figure collects everything within and related to the plotting area. 
-Specifically, all plots (and their settings) within the plotting area, 
+Specifically: all plots (and their settings) within the plotting area, 
 the layout of the plots, the selected channels, and the linked/unlinked status 
 of each plot.
+
+The list of created Figures is in the Project tree (on the left side of the 
+FIND window) under the Figure Sets group. At startup, FIND creates a single 
+*Default* Figure that all plots will initially be created in.
+
+If you want to rename or delete a Figure, access the context menu for it.
+
+.. note:: There must be at least one Figure, and FIND will not allow you to 
+          delete the current (in bold) Figure.
 
 Plotting Area Setup
 ^^^^^^^^^^^^^^^^^^^
@@ -222,7 +245,53 @@ rows and columns, you must use the **Plots>>Setup** menu option.
 .. figure:: figures/viz_fig17_plot_setup.png
    :scale: 30 % 
    
+Below is an example of a ``2 x 3`` grid setup:
 
+.. figure:: figures/viz_fig18_2x3grid.png
+   :scale: 20 %
    
+Creating Figures
+^^^^^^^^^^^^^^^^
+A new Figure can be added through the **Plots>>Add New Figure** menu item. This 
+will first ask you to type a name for the new Figure. Then the new Figure will 
+appear in the Project tree. It is automatically selected (shown in bold), a 
+single subplot is created and the currently selected data item is plotted by 
+default with a 2D scatter plot (if it has a clustering, that will be plotted).
+
+.. figure:: figures/viz_fig19_new_fig.png
+   :scale: 30 %
    
+Switching Figures
+^^^^^^^^^^^^^^^^^
+If you have created multiple Figures, switching between them is as simple as 
+clicking on the Figure item in the Figure Sets group. This action will 
+completely replace the contents of the plotting area with the contents of the 
+new Figure.
+
+.. note:: For larger datasets (100K events or more) switching between Figures 
+          may take a few seconds since FIND has to recalculate and draw all 
+          plots saved into the Figure. 
+
+Exporting Figures
+^^^^^^^^^^^^^^^^^
+FIND enables you to save the contents of the plotting area to a number of 
+standard image formats: PNG, PDF, PS (post-script), EPS, and SVG. To perform an 
+export, use the **Plots>>Export Figure...** menu item. A save dialog will 
+appear and ask you to specify the name of the file and the file type of the 
+new image file. An example of a Figure export is below:
+
+.. figure:: figures/viz_fig20_fig_export.png
+   :scale: 30 %  
+
+
+
+
+
+
+
+
+
+
+
+
    
