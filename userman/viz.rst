@@ -281,7 +281,7 @@ appear and ask you to specify the name of the file and the file type of the
 new image file. An example of a Figure export is below:
 
 .. figure:: figures/viz_fig20_fig_export.png
-   :scale: 30 %  
+   :scale: 30 %
 
 
 
