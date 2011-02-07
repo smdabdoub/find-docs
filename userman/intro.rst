@@ -64,12 +64,12 @@ at all times.
    font.
 
 5. **Currently Selected Clustering** - This operates in a similar fashion to 
-     the selected dataset. Currently it is only important when adding a new 
-     plot to the Plotting Area (**Plots>>Add New Subplot**). If the current 
-     dataset also has one or more clusterings, the selected clustering will be 
-     plotted as a colored 2D Scatterplot (indicating different clusters) when 
-     the new plot is created. As with the selected dataset, the selected 
-     clustering is indicated by a bold font.
+   the selected dataset. Currently it is only important when adding a new plot 
+   to the Plotting Area (**Plots>>Add New Subplot**). If the current 
+   dataset also has one or more clusterings, the selected clustering will be 
+   plotted as a colored 2D Scatterplot (indicating different clusters) when 
+   the new plot is created. As with the selected dataset, the selected 
+   clustering is indicated by a bold font.
 
 6. **Currently Selected Figure** - This selection (also in bold font) indicates 
    the Figure that is currently active and displayed in the Plotting Area. To 
