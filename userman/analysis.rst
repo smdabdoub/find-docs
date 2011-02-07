@@ -23,12 +23,48 @@ are split into two categories based on how they work:
    Requires no foreknowledge of any kind. Simply attempts to classify data 
    based on mathematical relationships (such as distance) between the input 
    data points.
-   
+
+Clustering with FIND
+^^^^^^^^^^^^^^^^^^^^
 FIND currently provides two unsupervised clustering methods: 
 `k-means <http://en.wikipedia.org/wiki/K_means>`_ and a modified k-means 
 specifically designed for Flow Cytometry data as published by 
 `T. Bakker Schut et al.  <http://onlinelibrary.wiley.com/doi/10.1002/cyto.990140609/abstract>`_ 
 in *Cytometry Part A*.
+
+All built-in clustering algorithms are available through the **Cluster** menu. 
+Plugin clustering algorithms are available in the **Plugins>>Cluster** menu. 
+When you choose an algorithm from the menu, it operates only on the currently 
+selected dataset (bold in the Data Sets subtree; see Introduction section on 
+the User Interface). So make sure the dataset you want to analyze is selected 
+before you run a clustering. When the clustering is completed, a new entry is 
+added as a child of the dataset in the Project tree. The default name is the 
+name of the clustering method and an auto-incremented integer (e.g. k-means 1). 
+Currently you cannot change the name of a clustering entry. Each clustering 
+appears with an expand arrow next to it. Clicking on the arrow will show a text 
+entry underneath the clustering with a list of the options and the values you 
+provided to run that particular clustering instance. This can be useful if you 
+cluster run multiple clusterings, either on the same dataset or different ones, 
+to make sure you used the same settings.
+
+.. note:: Many clustering methods use random number generation to perform 
+         certain aspects of the algorithm such as choosing the initial cluster 
+         centers in k-means. This tends not to greatly affect the final 
+         results and, for example, in k-means, the user can specify that the 
+         algorithm be run multiple times to reduce any potential effect. 
+         Ultimately, just be aware that you may not get the *exact* same 
+         results running the same algorithm twice, but there should be no 
+         significant difference between runs.  
+
+The basic requirement for many unsupervised clustering methods is that you 
+provide the number of desired clusters or groups you want the data to be 
+partitioned into. If your data is fairly well separated/distinguished between 
+different cell types, you may want to enter the number of different types you 
+expect. Often, however, it can be helpful to request a larger number of 
+clusters than cell types that you expect. This can give you a finer 
+understanding of the layout of the data, to which you can apply your domain 
+knowledge to throw away, keep, or combine into larger groups (this tool will be 
+described later) the initially found clusters.
 
 K-Means Clustering
 ^^^^^^^^^^^^^^^^^^
@@ -36,15 +72,6 @@ For a description of the operation of the basic k-means algorithm, please
 see the excellent `Wikipedia <http://en.wikipedia.org/wiki/K-means_clustering>`_ 
 article. Note that while this algorithm was not designed specifically for Flow 
 Cytometry data, it has been successfully applied to such data (citation). 
-
-The basic requirement for k-means is that you provide the number of desired 
-clusters or groups you want the data to be partitioned into. If your data is 
-fairly well separated/distinguished between different cell types, you may want 
-to enter the number of different types you expect. Often, however, it can be 
-helpful to request a larger number of clusters than cell types that you expect. 
-This can give you a finer understanding of the layout of the data, to which you 
-can apply your domain knowledge to throw away, keep, or combine into larger 
-groups (this tool will be described later) the initially found clusters.
 
 Below is the options dialog that appears when you select the 
 **Cluster>>k-means** menu item.  
@@ -102,13 +129,37 @@ in *Cytometry Part A*.
 
 Interacting with Clusterings
 ----------------------------
+After running a clustering algorithm on a dataset, FIND provides a number of 
+means to analyze and interact with the clustering. The most basic is 
+visualization of the clustering; these options are discussed in the previous 
+section of this manual. Other options are provided through the **Data** menu 
+and the context menu available by right-clicking on the clustering item in the 
+Project tree; these options are discussed below.
 
+Clustering Information
+^^^^^^^^^^^^^^^^^^^^^^
+The first option available, after plots, in the context menu for clusterings is 
+the **Info** item. Selecting this option provides a dialog indicating, for each 
+cluster: the color, the percentage of events belonging to that cluster out of 
+the whole for the parent dataset, and the total number of events the percentage 
+translates into.
 
+.. figure:: figures/da_fig3_clust_info.png
+   :scale: 30 %
 
+Isolating Clusters
+^^^^^^^^^^^^^^^^^^
+The next available option through the context menu is **Isolate Clusters**. 
+This incredibly useful tool allows you to create an entirely new dataset by 
+choosing one or more clusters from the selected clustering. This is 
+accomplished through the dialog show below: 
 
+.. figure:: figures/da_fig4_clust_isolate.png
+   :scale: 30 %
 
-
-
+This dialog is essentially identical to the clustering information dialog, with 
+the added column of checkboxes. Selecting one or more checkboxes will create a 
+new dataset with the 
 
 
 
