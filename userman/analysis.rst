@@ -159,7 +159,52 @@ accomplished through the dialog show below:
 
 This dialog is essentially identical to the clustering information dialog, with 
 the added column of checkboxes. Selecting one or more checkboxes will create a 
-new dataset with the 
+new dataset with the selected clusters joined together. Once you select the 
+cluster(s) you want, clicking the OK button will bring up a simple dialog box 
+asking you to give a name to the new dataset. When you type in a name and click 
+OK again, the new dataset will appear as a child in the tree of the dataset it 
+was created from (parent dataset).
+
+Recoloring Clusterings
+^^^^^^^^^^^^^^^^^^^^^^
+As discussed earlier, there is some randomness in certain clustering algorithms. 
+For example, the initial cluster centers may be chosen randomly. These centers 
+move around as the algorithm progresses, but their order determines the color 
+the cluster is represented by. Thus, even if two runs of the same algorithm 
+produce the same clusters for a dataset, the order they are presented in may be 
+different. The results are identical, but they are presented to the user in 
+different colors, making it more difficult to do comparative analysis. The 
+**Data>>Recolor Clusters** menu action provides a means to fix this problem. 
+
+.. figure:: figures/da_fig5_recolor_dlg.png
+   :scale: 30 %
+
+In the dialog shown above, select the two clusterings you are interested in. 
+FIND then compares each of the clusters between the two selected items to 
+determine the cluster pairs that are most similar. The clusters are then 
+reordered such that those most similar have the same color. The following two 
+images illustrate this exact point. Two clusterings of the same data produce 
+three clusters with the exact same percentage breakdown, but the blue and red 
+clusters appear to be switched. After recoloring, in the second image, the 
+clusters are ordered correctly as can be seen in both sets of graphs.
+
+.. figure:: figures/da_fig6_recolor_before.png
+   :scale: 30 %
+   
+.. figure:: figures/da_fig7_recolor_after.png
+   :scale: 30 %
+
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 
