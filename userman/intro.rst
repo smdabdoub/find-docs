@@ -88,7 +88,14 @@ at all times.
    This allows FIND to determine where new plots should be drawn to when plotting a 
    dataset or clustering through the context menu for those items.
 
+Updating FIND
+-------------
+You can check for updates to FIND through the **Help** menu. If an update is 
+available, FIND will notify you and offer to open the website so you can 
+download the newest version.
 
+.. figure:: figures/intro_updating.png
+   :scale: 20 %
 
 
 
