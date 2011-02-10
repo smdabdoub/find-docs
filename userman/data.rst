@@ -79,6 +79,20 @@ may implement an export file type.
    :scale: 50 % 
 
 
+Saving and Restoring the Project
+--------------------------------
+FIND allows you to save the entire state of the analysis as two files:
+one containing all the qualitative information about data structure, 
+attributes, and visualizations, the second a simple binary file containing all 
+the loaded numeric data. These two files can be packaged and transported in any 
+manner for later use on the same machine or any other machine running
+FIND. To save your project, use the **File>>Save Project...** menu action 
+(Ctrl-S on Windows or ⌘S on OS X). The file you specify will be saved as a 
+**.find** file and a **.npz** file. To load a previously saved project, use the 
+**File>>Load Project** menu action (Ctrl-L on Windows or ⌘L on OS X) and 
+select the **.find** file of the project you want. Everything will be restored 
+as it was when the project was saved. 
+
 
 
 
