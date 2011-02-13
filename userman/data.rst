@@ -24,12 +24,12 @@ source are FCS 3.0 files, and those are enabled for selection by default. The
 screenshots below illustrate the process of opening single or multiple files. 
 
 .. figure:: figures/data_fig1_openfile.png
-   :scale: 50 %
+   :scale: 60 %
 
 Open File dialog with FCS 3.0 selected by default
 
 .. figure:: figures/data_fig2_rename.png
-   :scale: 50 %
+   :scale: 60 %
        
 After choosing your file(s) the Sample Data Display window appears with all the 
 channels and the first ten rows of data visible. The data grid allows you to 
@@ -45,7 +45,7 @@ and names to all following files.
           dropdowns.  
     
 .. figure:: figures/data_fig3_seldims.png
-   :scale: 50 %
+   :scale: 60 %
        
 The second dialog displayed when opening FC data files allows you to specify 
 which channels are used when applying automated analysis tools such as 
@@ -62,10 +62,10 @@ an ``n x 2`` (rows, columns) format where ``n`` is half the number of
 opened files.
 
 .. figure:: figures/data_fig4_fileopened.png
-   :scale: 50 %
+   :scale: 60 %
    
 .. figure:: figures/data_fig5_2filesopened.png
-   :scale: 50 %
+   :scale: 60 %
    
  
 Exporting Data
@@ -80,7 +80,7 @@ may implement an export file type.
           perform analysis and/or visualization with other programs.
 
 .. figure:: figures/data_fig6_exporting.png
-   :scale: 50 % 
+   :scale: 60 % 
 
 
 Saving and Restoring the Project
@@ -91,9 +91,9 @@ attributes, and visualizations, the second a simple binary file containing all
 the loaded numeric data. These two files can be packaged and transported in any 
 manner for later use on the same machine or any other machine running
 FIND. To save your project, use the **File>>Save Project...** menu action 
-(Ctrl-S on Windows or ⌘S on OS X). The file you specify will be saved as a 
+(Ctrl-S on Windows or Command-S on OS X). The file you specify will be saved as a 
 **.find** file and a **.npz** file. To load a previously saved project, use the 
-**File>>Load Project** menu action (Ctrl-L on Windows or ⌘L on OS X) and 
+**File>>Load Project** menu action (Ctrl-L on Windows or Command-L on OS X) and 
 select the **.find** file of the project you want. Everything will be restored 
 as it was when the project was saved. 
 

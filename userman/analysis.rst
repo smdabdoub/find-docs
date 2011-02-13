@@ -77,7 +77,7 @@ Below is the options dialog that appears when you select the
 **Cluster>>k-means** menu item.  
 
 .. figure:: figures/da_fig1_kmeans_opts.png
-   :scale: 30 %
+   :scale: 60 %
 
 * **Number of clusters** - The number of clusters that should be found as the final 
   result of the algorithm
@@ -110,7 +110,7 @@ provided in the publication by
 in *Cytometry Part A*.
 
 .. figure:: figures/da_fig2_bs-kmeans_opts.png
-   :scale: 30 %
+   :scale: 60 %
 
 * **Number of final clusters** - The number of clusters that should be found as 
   the final result of the algorithm.
@@ -145,7 +145,7 @@ the whole for the parent dataset, and the total number of events the percentage
 translates into.
 
 .. figure:: figures/da_fig3_clust_info.png
-   :scale: 30 %
+   :scale: 60 %
 
 Isolating Clusters
 ^^^^^^^^^^^^^^^^^^
@@ -155,7 +155,7 @@ choosing one or more clusters from the selected clustering. This is
 accomplished through the dialog show below: 
 
 .. figure:: figures/da_fig4_clust_isolate.png
-   :scale: 30 %
+   :scale: 60 %
 
 This dialog is essentially identical to the clustering information dialog, with 
 the added column of checkboxes. Selecting one or more checkboxes will create a 
@@ -181,7 +181,7 @@ different colors, making it more difficult to do comparative analysis. The
 **Data>>Recolor Clusters** menu action provides a means to fix this problem. 
 
 .. figure:: figures/da_fig5_recolor_dlg.png
-   :scale: 30 %
+   :scale: 60 %
 
 In the dialog shown above, select the two clusterings you are interested in. 
 FIND then compares each of the clusters between the two selected items to 
@@ -193,10 +193,10 @@ clusters appear to be switched. After recoloring, in the second image, the
 clusters are ordered correctly as can be seen in both sets of graphs.
 
 .. figure:: figures/da_fig6_recolor_before.png
-   :scale: 30 %
+   :scale: 60 %
    
 .. figure:: figures/da_fig7_recolor_after.png
-   :scale: 30 %
+   :scale: 60 %
 
  
 

@@ -27,7 +27,7 @@ elements are highlighted, as well as the important data FIND keeps track of
 at all times.
 
 .. figure:: figures/intro_basic_features.png
-   :scale: 50 %
+   :scale: 80 %
    
 1. **Project Tree** - This is a hierarchical representation of the loaded 
    datasets and their clusterings (where existing), and the list of stored 
@@ -95,7 +95,7 @@ available, FIND will notify you and offer to open the website so you can
 download the newest version.
 
 .. figure:: figures/intro_updating.png
-   :scale: 20 %
+   :scale: 60 %
 
 
 

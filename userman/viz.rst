@@ -4,7 +4,7 @@ Data visualization in FIND is performed mainly through the plotting area,
 which makes up the right side of the main program window.
 
 .. figure:: figures/data_fig4_fileopened.png
-   :scale: 30 %
+   :scale: 60 %
    
 Here single data file has been opened, and a single 2D scatter plot 
 automatically created, visualizing the first two dimensions of the data as 
@@ -22,10 +22,10 @@ the **Plot** context menu available by right-clicking (or ctrl-click on OS X
 for single-button mice).
 
 .. figure:: figures/viz_fig2_data_plots.png
-   :scale: 30 %
+   :scale: 60 %
    
 .. figure:: figures/viz_fig3_cluster_plots.png
-   :scale: 30 %
+   :scale: 60 %
    
 The above images illustrate the subdivision of plot types. Specifically, plots 
 are grouped into those applicable to datasets and those applicable to 
@@ -66,7 +66,7 @@ changing the plot settings, accessible through the context menu when
 right-clicking on a plot.
 
 .. figure:: figures/viz_fig4_plot_context.png
-   :scale: 30 %
+   :scale: 60 %
    
 Selecting the **Properties...** menu item displays a settings dialog allowing 
 you to alter the display or calculation with options specific to the plot type 
@@ -83,7 +83,7 @@ data plus five percent, i.e. ``(0, max(data) * 1.05]``. This is indicated by the
 selection of the **Auto** checkboxes.
 
 .. figure:: figures/viz_fig5_genprop_range.png
-   :scale: 30 %
+   :scale: 60 %
 
 The second set of general options is the Transformations panel. This setting is 
 initially set automatically by inspection of the data. FCS format files list 
@@ -94,7 +94,7 @@ FIND to either use automatically discovered information, or choose what scale
 the data are displayed in for each axis independently.
 
 .. figure:: figures/viz_fig6_genprop_tfrm.png
-   :scale: 30 %
+   :scale: 60 %
 
 
 Dataset Plots
@@ -112,7 +112,7 @@ General Plot Properties section above, there are no options particular to the
 2D Scatter Plot.
 
 .. figure:: figures/data_fig4_fileopened.png
-   :scale: 30 %
+   :scale: 60 %
 
 Boxplot
 ^^^^^^^
@@ -123,7 +123,7 @@ and for each channel a traditional
 `box plot <http://en.wikipedia.org/wiki/Box_plot>`_ in the y-axis.
 
 .. figure:: figures/viz_fig7_boxplot.png
-   :scale: 30 %
+   :scale: 60 %
    
 The only alterable properties for this plot (as seen below) is the angle to 
 which the x-axis labels are rotated, with ``0`` representing a horizontal 
@@ -131,7 +131,7 @@ orientation. This is useful for datasets with many channels where FIND does not
 adequately choose an angle that cleanly separates the labels.
 
 .. figure:: figures/viz_fig8_boxplot_props.png
-   :scale: 30 %
+   :scale: 60 %
 
 Histogram
 ^^^^^^^^^
@@ -140,7 +140,7 @@ Gaussian kernel to the data as an approximation to get the smooth curve seen
 in the image below. 
 
 .. figure:: figures/viz_fig9_histogram.png
-   :scale: 30 %
+   :scale: 60 %
 
 The Gaussian kernel estimation gives a good representation of the overall 
 shape of the data, but may not adequately estimate the amplitude. In the 
@@ -150,7 +150,7 @@ version via the **Histogram Type** option. Finally, you can set the fineness of
 the plot by changing the **Histogram Bins** option.  
    
 .. figure:: figures/viz_fig10_histogram_props.png
-   :scale: 30 %
+   :scale: 60 %
 
 2D Heatmap
 ^^^^^^^^^^
@@ -160,7 +160,7 @@ point. The density of points contained within the bin is displayed as a color
 map (heat map) with a scale bar on the right side of the plot.
 
 .. figure:: figures/viz_fig11_heat.png
-   :scale: 30 %
+   :scale: 60 %
    
 There are three (currently two) modifiable options for the 2D Heatmap. The 
 **Heatmap Type** is currently under development and other options will 
@@ -173,7 +173,7 @@ values may provide better insight into the data, but will take longer to
 plot.
 
 .. figure:: figures/viz_fig12_heat_props.png
-   :scale: 30 %
+   :scale: 60 %
    
 Clustering Plots
 ----------------
@@ -188,7 +188,7 @@ cluster membership as seen in the image below. There are no plot-specific
 options.
 
 .. figure:: figures/viz_fig14_2dscatter_clust.png
-   :scale: 30 %
+   :scale: 60 %
 
 Barplot
 ^^^^^^^
@@ -197,7 +197,7 @@ y-axis. Each cluster is a tick on the x-axis. The default y-axis value is the
 percentage of each cluster out of the total events in the parent dataset.
 
 .. figure:: figures/viz_fig15_barplot.png
-   :scale: 30 %
+   :scale: 60 %
 
 The Barplot comes with two plot-specific options. The first option allows you 
 to change the rotation angle of the x-axis labels (similar to the Barplot). The 
@@ -206,7 +206,7 @@ percentage (as mentioned above), the percentage of the top level parent, and
 the total number of events in each cluster (no percentage).
 
 .. figure:: figures/viz_fig16_barplot_props.png
-   :scale: 30 %
+   :scale: 60 %
 
 .. note:: As will be explained in the section of the documentation on 
           clustering, new dataset items can be created by isolating multiple or 
@@ -243,12 +243,12 @@ discussed earlier. If you want to change the number of plots or the number of
 rows and columns, you must use the **Plots>>Setup** menu option.
 
 .. figure:: figures/viz_fig17_plot_setup.png
-   :scale: 30 % 
+   :scale: 60 % 
    
 Below is an example of a ``2 x 3`` grid setup:
 
 .. figure:: figures/viz_fig18_2x3grid.png
-   :scale: 20 %
+   :scale: 80 %
    
 Creating Figures
 ^^^^^^^^^^^^^^^^
@@ -259,7 +259,7 @@ single subplot is created and the currently selected data item is plotted by
 default with a 2D scatter plot (if it has a clustering, that will be plotted).
 
 .. figure:: figures/viz_fig19_new_fig.png
-   :scale: 30 %
+   :scale: 80 %
    
 Switching Figures
 ^^^^^^^^^^^^^^^^^
@@ -281,7 +281,7 @@ appear and ask you to specify the name of the file and the file type of the
 new image file. An example of a Figure export is below:
 
 .. figure:: figures/viz_fig20_fig_export.png
-   :scale: 30 %
+   :scale: 60 %
 
 
 
