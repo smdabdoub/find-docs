@@ -18,9 +18,9 @@ Additional file formats may be used as a source if a
 
 Opening files
 --------------
-Flow Cytometry (FC) data files are opened through the File >> Open... menu item in 
-the FIND interface. As mentioned in the previous section, the main data source 
-are FCS 3.0 files, and those are enabled for selection by default. The 
+Flow Cytometry (FC) data files are opened through the File >> Open... menu item 
+in the FIND interface. As mentioned in the previous section, the main data 
+source are FCS 3.0 files, and those are enabled for selection by default. The 
 screenshots below illustrate the process of opening single or multiple files. 
 
 .. figure:: figures/data_fig1_openfile.png
@@ -74,6 +74,10 @@ Through the File>>Export... submenu you can save the currently selected data
 item to file. The specific export type is selected directly as an option in the 
 submenu. FIND currently has the ability to export to CSV, but any IO plugin 
 may implement an export file type.
+
+.. note:: This can be coupled with the Isolate Clusters tool (see Data 
+          Analysis section) to export clusters to external files in order to 
+          perform analysis and/or visualization with other programs.
 
 .. figure:: figures/data_fig6_exporting.png
    :scale: 50 % 

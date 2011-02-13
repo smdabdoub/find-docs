@@ -165,6 +165,10 @@ asking you to give a name to the new dataset. When you type in a name and click
 OK again, the new dataset will appear as a child in the tree of the dataset it 
 was created from (parent dataset).
 
+.. note:: As mentioned in the Data section, datasets which represent isolated 
+          clusters can be exported as external files to disk, allowing 
+          visualization and analysis of clusters in other programs.
+
 Recoloring Clusterings
 ^^^^^^^^^^^^^^^^^^^^^^
 As discussed earlier, there is some randomness in certain clustering algorithms. 
